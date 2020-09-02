@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #fffde7;
+  font-family: "Alata", sans-serif;
+  font-size: 1rem;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  background: #ff5678;
+}
+header img {
+  width: 3rem;
+  margin: 1rem;
+}
+.menu-btn {
+  margin: 1rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 2.5rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  color: #fffde7;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.menu-btn__burguer {
+  width: 30px;
+  height: 3px;
+  background: #fffde7;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+  margin: 0.2rem;
+}
+
+.menu-btn__burguer::before,
+.menu-btn__burguer::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background: #fffde7;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn__burguer::before {
+  transform: translateY(-16px);
+}
+.menu-btn__burguer::after {
+  transform: translateY(16px);
+}
+
+.menu-btn.open .menu-btn__burguer {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+
+.menu-btn.open .menu-btn__burguer::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__burguer::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+main {
+  text-align: center;
+}
+h1 {
+  margin: 1rem;
+}
+
+main button {
+  margin-top: 1rem;
+  width: 80%;
+  height: 3rem;
+  font-family: inherit;
+  background: #ff5678;
+  color: #fffde7;
+  border-radius: 15px;
+  font-size: 1.5rem;
+}
+main button:focus {
+  outline-color: #ff5678;
+}
+main button:hover,
+main button:active {
+  background: #fffde7;
+  color: #ff5678;
+  border: 2px solid #ff5678;
+}
+.cards {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card {
+  margin: auto;
+  width: 90%;
+  height: 6rem;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  -webkit-box-shadow: 10px 10px 10px -4px rgba(255, 86, 120, 0.37);
+  -moz-box-shadow: 10px 10px 10px -4px rgba(255, 86, 120, 0.37);
+  box-shadow: 10px 10px 10px -4px rgba(255, 86, 120, 0.37);
+}
+
+.card img {
+  width: 4rem;
+  animation-name: toggle;
+  animation-duration: 500ms;
+  animation-iteration-count: 4;
+}
+.card h2 {
+  margin-top: 2rem;
+}
+footer {
+  padding-top: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+  background: #ff5678;
+  color: #fffde7;
+  display: flex;
+  flex-direction: column;
+}
+footer a {
+  color: #fffde7;
+  text-decoration: none;
+}
+footer a i:hover,
+footer a i:active {
+  font-size: 2.2rem;
+}
+footer a i {
+  font-size: 2rem;
+  margin: 0.3rem;
+}
+.social {
+  margin-top: 0.5rem;
+}
+.menu {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: #ff5678;
+  color: #fffde7;
+}
+
+.menu a {
+  color: #fffde7;
+  text-decoration: none;
+  margin: 1rem;
+}
+.openNav {
+  display: block;
+}
+.copyright {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+}
+.desktop {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .mobile {
+    display: none;
+  }
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  nav ul a {
+    color: #fffde7;
+    margin: 1rem;
+  }
+  nav ul a:hover,
+  nav ul a:active {
+    font-size: 1.2rem;
+  }
+  .desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .desktop img {
+    width: 50%;
+  }
+  .desktop title {
+    width: 50%;
+  }
+  .menu-btn {
+    display: none;
+  }
+
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .card {
+    width: 40%;
+  }
+}
+@keyframes toggle {
+  0% {
+    transform: rotate(-30deg);
+    opacity: 0.2;
+  }
+  25% {
+    transform: rotate(-20deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: rotate(-10deg);
+    opacity: 0.7;
+  }
+  75% {
+    transform: rotate(0deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: rotate(10deg);
+    opacity: 1;
+  }
+}
+
+#morph {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+.enter {
+  width: 30%;
+  height: 3rem;
+  border-radius: 10px;
+  border: 3px solid #fffde7;
+  color: #fffde7;
+  z-index: 3;
+  position: relative;
+  left: 35%;
+  top: 200px;
+  font-size: 1.5rem;
+  background-color: transparent;
+  font-family: inherit;
+}
